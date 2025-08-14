@@ -1,0 +1,34 @@
+config/ — keeps DB & environment setup isolated.
+
+controllers/ — maps routes to logic without mixing business logic.
+
+services/ — reusable, testable business logic (good for scaling).
+
+middlewares/ — authentication, validation, error handling in one place.
+
+utils/ — avoids repeating helper functions.
+
+tests/ — keeps automated tests organized.
+
+
+package.json original file
+
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "json2csv": "^6.0.0-alpha.2",
+    "node-zklib": "^1.3.0"
+  }
+}
