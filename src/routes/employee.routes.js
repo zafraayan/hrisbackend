@@ -16,7 +16,8 @@
 
 import express from "express";
 import {
-  createEmployees, // controller function
+  createEmployees,
+  getLates, // controller function
   listEmployees,
 } from "../controllers/employee.controller.js";
 
@@ -24,5 +25,6 @@ const router = express.Router();
 
 router.post("/", createEmployees); // FIXED
 router.get("/", listEmployees);
+router.get("/lates", getLates);
 
 export default router;
