@@ -1,31 +1,3 @@
-// server.js (Node.js + Express backend)
-// const express = require("express");
-// const ZKLib = require("node-zklib");
-// const cors = require("cors");
-
-// const app = express();
-// const port = 3001;
-
-// app.use(cors());
-
-// app.get("/attendance-logs", async (req, res) => {
-//   const zk = new ZKLib("192.168.1.201", 4370, 10000, 4000); // Use your device's IP
-
-//   try {
-//     await zk.createSocket();
-//     const logs = await zk.getAttendances();
-//     await zk.disconnect();
-//     res.json(logs.data);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).send("Failed to retrieve logs");
-//   }
-// });
-
-// app.listen(port, () => {
-//   console.log(`Server running at http://localhost:${port}`);
-// });
-
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";

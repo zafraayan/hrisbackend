@@ -16,15 +16,21 @@
 
 import express from "express";
 import {
+  attendance,
   createEmployees,
-  getLates, // controller function
+  dailyAttendance,
+  // getLates, // controller function
   listEmployees,
+  // monthlyLates,
 } from "../controllers/employee.controller.js";
 
 const router = express.Router();
 
 router.post("/", createEmployees); // FIXED
 router.get("/", listEmployees);
-router.get("/lates", getLates);
+// router.get("/lates", getLates);
+// router.get("/monthly-lates", monthlyLates);
+router.get("/attendance", attendance);
+router.get("/daily-attendance", dailyAttendance);
 
 export default router;
