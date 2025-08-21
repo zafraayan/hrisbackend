@@ -21,6 +21,7 @@ import {
   dailyAttendance,
   // getLates, // controller function
   listEmployees,
+  statechEmployees,
   // monthlyLates,
 } from "../controllers/employee.controller.js";
 
@@ -32,5 +33,6 @@ router.get("/", listEmployees);
 // router.get("/monthly-lates", monthlyLates);
 router.get("/attendance", attendance);
 router.get("/daily-attendance", dailyAttendance);
+router.get("/info", statechEmployees);
 
 export default router;
