@@ -109,7 +109,3 @@ export const dailyAttendance = async (req, res, next) => {
 
   res.status(200).json(result);
 };
-
-export const statechEmployees = async (req, res, next) => {
-  res.status(200).json(zkusers);
-};
