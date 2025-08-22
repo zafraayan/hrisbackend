@@ -37,8 +37,8 @@ export const attendance = async (req, res, next) => {
     return acc;
   }, {});
 
-  const startDate = new Date(`2025-08-20T00:00:00+08:00`);
-  const endDate = new Date(`2025-08-20T23:59:59+08:00`);
+  const startDate = new Date(`${from}T00:00:00+08:00`);
+  const endDate = new Date(`${to}T23:59:59+08:00`);
 
   const result = Object.keys(groupedByUser)
     .map((key) => {
@@ -65,6 +65,9 @@ export const attendance = async (req, res, next) => {
       return null;
     })
     .filter(Boolean);
+
+  console.log(from);
+  console.log(to);
 
   res.status(200).json(result);
 };
