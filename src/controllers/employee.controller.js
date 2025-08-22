@@ -1,20 +1,26 @@
-import { getEmployees, createEmployee } from "../services/employee.service.js";
+import { addEmployee, getEmployees } from "../services/employee.service.js";
 import { zkData } from "./zkdata.js";
 import { zkusers } from "./zkusers.js";
-
-export const createEmployees = async (req, res, next) => {
-  try {
-    const newEmployee = await createEmployee(req.body);
-    res.status(201).json(newEmployee);
-  } catch (error) {
-    next(error);
-  }
-};
 
 export const listEmployees = async (req, res, next) => {
   try {
     const employees = await getEmployees();
     res.status(200).json(employees);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const createEmployees = async (req, res, next) => {
+  try {
+    // Use Promise.all to await multiple async operations
+    const employees = await Promise.all(
+      zkusers.map(async (el) => {
+        return await addEmployee(el); // save each employee
+      })
+    );
+
+    res.status(200).json(employees); // send response once with all saved employees
   } catch (error) {
     next(error);
   }
