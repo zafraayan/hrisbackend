@@ -1,10 +1,15 @@
 import express from "express";
-import { addEmplogs, listLogs } from "../controllers/logs.controller.js";
+import {
+  addEmplogs,
+  dailyLogs,
+  monthlyLogs,
+} from "../controllers/logs.controller.js";
 
 const router = express.Router();
 
 router.post("/", addEmplogs);
-router.get("/", listLogs);
+router.get("/daily-logs", dailyLogs);
+router.get("/monthly-logs", monthlyLogs);
 // router.get("/", getLogs);
 
 export default router;
