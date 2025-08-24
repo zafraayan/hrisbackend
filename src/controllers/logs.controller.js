@@ -37,9 +37,22 @@ export const addEmplogs = async (req, res, next) => {
   }
 };
 
+export const insert = async () => {
+  try {
+    const logs = await Promise.all(
+      zkData.map(async (el) => {
+        return await addLogs(el);
+      })
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const monthlyLogs = async (req, res, next) => {
   const { from, to } = req.query;
 
+  insert();
   try {
     const logs = await getLogs();
 

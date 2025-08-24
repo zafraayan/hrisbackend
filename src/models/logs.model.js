@@ -10,4 +10,6 @@ const logsSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+logsSchema.index({ userSn: 1, recordTime: 1 }, { unique: true });
+
 export default mongoose.model("Logs", logsSchema, "logs");
