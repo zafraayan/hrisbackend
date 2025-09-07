@@ -1,13 +1,47 @@
+// import mongoose from "mongoose";
+
+// const employeeSchema = new mongoose.Schema(
+//   {
+//     uid: { type: String, required: true },
+//     role: { type: String, required: true },
+//     password: { type: String },
+//     name: { type: String, required: true },
+//     cardno: { type: Number, required: true },
+//     userId: { type: String, required: true },
+//   },
+//   { timestamps: true }
+// );
+
+// export default mongoose.model("Employees", employeeSchema, "employees");
 import mongoose from "mongoose";
 
 const employeeSchema = new mongoose.Schema(
   {
-    uid: { type: String, required: true },
-    role: { type: String, required: true },
-    password: { type: String },
-    name: { type: String, required: true },
-    cardno: { type: Number, required: true },
-    userId: { type: String, required: true },
+    firstName: { type: String },
+    middleName: { type: String },
+    lastName: { type: String },
+    idNumber: { type: String },
+    screenName: { type: String },
+    gender: { type: String },
+    status: { type: String },
+    address: { type: String },
+    contactNumber: { type: Number },
+    email: {
+      type: String,
+      lowercase: true,
+      trim: true,
+      match: [/^\S+@\S+\.\S+$/, "Please use a valid email address"],
+    },
+    sssNumber: { type: Number },
+    philHealth: { type: Number },
+    pagIbig: { type: Number },
+    tin: { type: Number },
+    dateOfBirth: { type: Date },
+    department: { type: String },
+    position: { type: String },
+    dateHired: { type: Date },
+    employmentType: { type: String },
+    basicSalary: { type: Number },
   },
   { timestamps: true }
 );
